@@ -46,45 +46,41 @@ public class BookApplication
              
             
            
-           String choice;
+            String choice;
             do{
-                
-                             
+                                             
                 System.out.println("\nBook No." + (i + 1));
                 
                 System.out.print("Title: "); //Prompt title from the user
                 title = s.nextLine();
-                
-                
 
                 System.out.print("Publication Year: "); // Prompt year from the user
                 year = Integer.parseInt(s.nextLine());
-                
-
+             
                 System.out.print("Price: RM"); // Prompt price from the user
                 price = Double.parseDouble(s.nextLine());
                 
-
                 System.out.print("Author's name: "); // Prompt author's name from the user
                 author = s.nextLine();
                
-                
                 System.out.println("\nWant to add another book? (y/n)");
                 System.out.print("Input: ");
                 choice = s.nextLine();
-
-
+                
                 Book book = new Book(title, year, price, author);
                 
                 Blinked.add(book);
+              
+                i++;
                 
-               if (("n").equals(choice) || ("N").equals(choice)) // If user wish to end the loop
-                {
-                System.out.println("");
-                break;
+                if (("n").equals(choice) || ("N").equals(choice)) // If user wish to end the loop
+                 {
+                     System.out.println("");
+                     break;
                  }
+                
 
-            }while (i != 0);
+              }while (i < Blinked.size());
             
  
                     
