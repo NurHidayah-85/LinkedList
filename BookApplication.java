@@ -12,14 +12,14 @@ import java.util.LinkedList;
 
 /**
  * Description : 
- * Implementation ArrayList class to create A collection of elements of the same type.
- * 
+ * 1)Implementation LinkedList class to create A collection of elements of the same type.
+ * 2)Using method add,removeFirst and remove by selected number.
  * 
  * Prepared for PROFESOR MADYA DR NURAZZAH BINTI ABD RAHMAN
  * 
- * LAB 2 (Topic : ArrayList and LinkedList)
+ * LAB 3 (Topic : ArrayList and LinkedList)
 * 
- * Submission date : 2 April 2023
+ * Submission date : 16 April 2023
  * Course : CSC508 (Data Structures)
  * 
  * @author NUR HIDAYAH BINTI ISHAK | ID: 2020496204 | Group: CS2304A
@@ -68,38 +68,25 @@ public class BookApplication
                 System.out.print("Author's name: "); // Prompt author's name from the user
                 author = s.nextLine();
                
-                //Book book = new Book(title, year, price, author);
                 
-               
-               
                 System.out.println("\nWant to add another book? (y/n)");
                 System.out.print("Input: ");
                 choice = s.nextLine();
-              
-               
-               
-                
-                ++i; // To collect the number of book
-                
 
-                 Book book = new Book(title, year, price, author);
+
+                Book book = new Book(title, year, price, author);
                 
                 Blinked.add(book);
                 
-               if (("n").equals(choice) || ("N").equals(choice)) // If user wish not to continue, then break the do while loop
-            {
+               if (("n").equals(choice) || ("N").equals(choice)) // If user wish to end the loop
+                {
                 System.out.println("");
                 break;
-            }
+                 }
 
-                            
-               
-             
-        }while (i != 0);
+            }while (i != 0);
             
-            
-        
-           
+ 
                     
            // Print the objects using toString() method
            System.out.println("----------------------------");
@@ -111,50 +98,53 @@ public class BookApplication
             System.out.println("The number of LinkedList size is = " + Blinked.size()); // Display the number of LinkedList size
          
    
-             Blinked.removeFirst();
+             Blinked.removeFirst(); //to remove the first element in LinkedList
              
              System.out.println("----------------------------");
-           System.out.println("LinkedList after deletion of first element:"+"\n");
-            for (int j=0; j<Blinked.size(); j++) {
-                     System.out.println(Blinked.get(j)); //return item at position index
-            }
+             System.out.println("LinkedList after deletion of first element:"+"\n");
+             for (int j=0; j<Blinked.size(); j++) {
+                 System.out.println("Book No." + (j + 1));
+                 System.out.println(Blinked.get(j)); //return item at position index
+             }
+            
+             Scanner inputdel = new Scanner (System.in);// Create a Scanner object as input
+             System.out.println("----------------------------");
+             System.out.println(" Please enter a number of book element to remove: ");
+             int numdel =Integer.parseInt (inputdel.nextLine()); 
+            
+             Blinked.remove(Blinked.get(numdel - 1));//remove element by using user input
+             System.out.println("----------------------------");
+             System.out.println("LinkedList after deletion of element :"+numdel+"\n");
+             for (int j=0; j<Blinked.size(); j++) {
+                 System.out.println("Book No." + (j + 1));//return item at position index
+                 System.out.println(Blinked.get(j)); //return item at position index
+             }
             
             Scanner inputnew = new Scanner (System.in);// Create a Scanner object as input
             System.out.println(" Please enter a number of book(s) to add: ");
-            int number =Integer.parseInt (inputnew.nextLine());
+            int number =Integer.parseInt (inputnew.nextLine());//number of book(s) to add
             
             for (i=0; i<number; i++){
-                
                              
                 System.out.print("\nTitle: "); //Prompt title from the user
                 title = inputnew.nextLine();
-                
-                
-
+     
                 System.out.print("Publication Year: "); // Prompt year from the user
                 year = Integer.parseInt(inputnew.nextLine());
-                
-
+       
                 System.out.print("Price: RM"); // Prompt price from the user
                 price = Double.parseDouble(inputnew .nextLine());
-                
-
+       
                 System.out.print("Author's name: "); // Prompt author's name from the user
                 author = inputnew.nextLine();
-               
-          
-                
-                      
-
-                 Book book = new Book(title, year, price, author);
-                
-                
+      
+                Book book = new Book(title, year, price, author);
                 
                 Blinked.add(book);
             }
             
             System.out.println("----------------------------");
-           System.out.println("LinkedList after add new data element:"+"\n");
+            System.out.println("LinkedList after add new data element:"+"\n");
             for (int j=0; j<Blinked.size(); j++) {
                      System.out.println(Blinked.get(j)); //return item at position index
             }
@@ -162,29 +152,7 @@ public class BookApplication
             
             System.out.println("----------------------------");
             System.out.println("The number of new LinkedList size is = " + Blinked.size()); // Display the number of LinkedList size
-      /*    Scanner sfirst = new Scanner (System.in);// Create a Scanner object as input
-            System.out.println(" Please enter a number");
-        int number = sfirst.nextInt();
-        
-         System.out.print("Title: "); //Prompt title from the user
-                title = sfirst.nextLine();
-                
-                
-
-                System.out.print("Publication Year: "); // Prompt year from the user
-                year = Integer.parseInt(sfirst.nextLine());
-                
-
-                System.out.print("Price: RM"); // Prompt price from the user
-                price = Double.parseDouble(sfirst.nextLine());
-                
-
-                System.out.print("Author's name: "); // Prompt author's name from the user
-                author = sfirst.nextLine();
-                
-        Blinked.addFirst(book); //insert object at the front of the list
-            */
-            
+                 
             
         }
             
