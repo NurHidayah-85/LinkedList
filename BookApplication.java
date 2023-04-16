@@ -42,11 +42,12 @@ public class BookApplication
             String title, author;
             int year,i=0;
             double price;
-            
-             
-            
-           
             String choice;
+
+
+            System.out.print("Please insert the book information: "); 
+
+
             do{
                                              
                 
