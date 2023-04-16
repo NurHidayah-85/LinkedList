@@ -49,7 +49,6 @@ public class BookApplication
             String choice;
             do{
                                              
-                System.out.println("\nBook No." + (i + 1));
                 
                 System.out.print("Title: "); //Prompt title from the user
                 title = s.nextLine();
@@ -71,7 +70,7 @@ public class BookApplication
                 
                 Blinked.add(book);
               
-                i++;
+                
                 
                 if (("n").equals(choice) || ("N").equals(choice)) // If user wish to end the loop
                  {
